@@ -143,6 +143,37 @@ test('Home Page', () => {
  PASS  Waiting for file changes...
        press h to show help, press q to quit
 ```
+8.4. We'd like to use the popular [@testing-library/jest-dom](https://github.com/testing-library/jest-dom) library.
+
+Run ```npm install --save-dev @testing-library/jest-dom```.
+
+Create a `vitest.setup.ts` with the following content:
+
+```ts
+import { afterEach } from 'vitest';
+import '@testing-library/jest-dom/vitest';
+import { cleanup } from '@testing-library/react';
+
+afterEach(() => {
+  cleanup();
+});
+```
+
+Update your `vitest.config.mts`:
+
+```ts
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
+
+export default defineConfig({
+  plugins: [tsconfigPaths(), react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: './vitest.setup.ts',
+  },
+});
+```
 
 
 ## 9. Debugging setup
