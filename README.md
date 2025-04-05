@@ -96,16 +96,54 @@ Cleanup you're `app/page.tsx` by replacing its contents:
 ```tsx
 export default function Home() {
   return (
-    <div className="p-24">
+    <main className="p-24">
       <h1 className="text-3xl font-bold underline">Hello, Workshop</h1>
-    </div>
+    </main>
   );
 }
 ```
 
 ## 8. Testing setup
 
-Follow the instructions as described here: [Setting up Vitest with Next.js - Manual Setup](https://nextjs.org/docs/app/building-your-application/testing/vitest#manual-setup)
+8.1. Follow the instructions as described here: [Setting up Vitest with Next.js - Manual Setup](https://nextjs.org/docs/app/building-your-application/testing/vitest#manual-setup)
+
+8.2. Place the file `app/page.test.psx` with the following content, next to `app/page.tsx`:
+
+```tsx
+import { expect, test } from 'vitest';
+import { render, screen, within } from '@testing-library/react';
+import Home from './page';
+
+test('Home Page', () => {
+  render(<Home />);
+  const main = within(screen.getByRole('main'));
+  expect(main.getByRole('heading', { level: 1, name: /Hello, Workshop/i })).toBeDefined();
+});
+```
+
+8.3. Run `npm run test` to see the results:
+
+```
+% npm run test
+
+> clash@0.1.0 test
+> vitest
+
+
+ DEV  v3.1.1 /Users/pawel/nextacademy-workshops/clash
+
+ ✓ src/app/page.test.tsx (1 test) 26ms
+   ✓ Home Page 25ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  15:04:23
+   Duration  356ms (transform 17ms, setup 0ms, collect 61ms, tests 26ms, environment 146ms, prepare 24ms)
+
+ PASS  Waiting for file changes...
+       press h to show help, press q to quit
+```
+
 
 ## 9. Debugging setup
 
