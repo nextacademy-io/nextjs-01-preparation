@@ -1,23 +1,23 @@
-# Next.js Preperation
+# Next.js Workshop: Preperation
 
 In this task we'd like to install the required tools and setup a basic project for our needs.
 
-## Install Git
+## 1. Install Git
 
 Go to https://git-scm.com/book/en/v2/Getting-Started-Installing-Git and install Git for your operating system.
 
-## Install Node.js and npm
+## 2. Install Node.js and npm
 
 Got to https://nodejs.org/en/download and install the most recent version of Node.js and npm (bundled). 
 
 > [!TIP]
 > Prefer to use the installation with [nvm](https://github.com/nvm-sh/nvm) on operating systems that support it (Linux, MacOS, ...).
 
-## Install your IDE: Visual Studio Code (VS Code)
+## 3. Install your IDE: Visual Studio Code (VS Code)
 
 Go to https://code.visualstudio.com and install the most recent version of _Visual Studio Code_ for your Operating System.
 
-### Recommended Extensions
+### 3.1. Recommended Extensions
 
 - [ESLint extension](https://marketplace.visualstudio.com/items/?itemName=dbaeumer.vscode-eslint)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
@@ -26,7 +26,7 @@ Go to https://code.visualstudio.com and install the most recent version of _Visu
 > [!NOTE]  
 > Make sure to read the documentation of each extension. Some of them need to be configured to work properly.
 
-## Create the _clash_ project
+## 4. Create the _clash_ project
 
 We would like to setup a basic application, using the [Automatic installation](https://nextjs.org/docs/app/getting-started/installation#automatic-installation) approach:
 
@@ -50,7 +50,7 @@ Follow this session:
 
 ✔ Would you like to customize the import alias (`@/*` by default)? … **No** / Yes
 
-## Configure auto formatting (on save) and Tailwind CSS autocomplete:
+## 5. Configure auto formatting (on save) and Tailwind CSS autocomplete:
 
 1. Create a file `.vscode/settings.json` in your project root, with the following content:
 
@@ -82,14 +82,14 @@ Follow this session:
 > [!NOTE]  
 > You might want to restart VS Code to make the changes work.
 
-## Setup shadcn/ui
+## 6. Setup shadcn/ui
 
 ```npx shadcn@latest init```
 
 > [!NOTE]
 > In case of issues, use the `--force` option
 
-## Project cleanup
+## 7. Project cleanup
 
 Cleanup you're `app/page.tsx` by replacing its contents:
 
@@ -103,9 +103,15 @@ export default function Home() {
 }
 ```
 
-## Debugging setup
+## 8. Testing setup
+
+Follow the instructions as described here: [Setting up Vitest with Next.js - Manual Setup](https://nextjs.org/docs/app/building-your-application/testing/vitest#manual-setup)
+
+## 9. Debugging setup
 
 Familarize yourself with the debbugging suggestions: https://nextjs.org/docs/app/building-your-application/configuring/debugging
+
+Choose the right option for you.
 
 
 
