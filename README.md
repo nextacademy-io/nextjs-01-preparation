@@ -175,6 +175,11 @@ export default defineConfig({
 });
 ```
 
+8.5. We'd like to use [user-event](https://testing-library.com/docs/user-event/intro) library, for simulating user interaction
+
+```sh
+npm install --save-dev @testing-library/user-event
+```
 
 ## 9. Debugging setup
 
